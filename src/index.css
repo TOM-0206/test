@@ -1,0 +1,134 @@
+/* Bulma CSS from CDN because the youtube video told me to*/ 
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+@keyframes fadeSlideDownIn {
+    0% {
+        transform : translate(0,100%) scale(75%,75%);
+        opacity: 0;
+    }
+    75%{
+        transform : translate(0,-1.25%) scale(100%,100%);
+        opacity: 90%;
+    }
+    100%{
+        transform : translate(0,0) ;
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    75%{
+        opacity: 90%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform : rotate(0deg);
+    }
+
+    25% {
+        transform : rotate(0.8deg);
+    }
+    50% {
+        transform : rotate(-0.8deg);
+    }
+    100%{
+        transform : rotate(0deg);
+    }
+}
+
+@keyframes pullDown {
+    0% {
+        transform : scale(100%,100%) translate(0%,0%);
+    }
+    20%{
+        transform : scale(100.1%,100.1%) translate(0%,2.5%);
+    }
+    30% {
+        transform : scale(101.5%,101.5%) translate(0%,3%);
+    }
+    60%{
+        transform : scale(100%,100%) translate(0%,2.5%);
+    }
+    100%{
+        transform : scale(100%,100%) translate(0%,0%);
+    }
+}
+    
+@keyframes expressCorrect {
+    0% {
+        background:default;
+    }
+
+    25% {
+        background: rgba(0, 255, 0, 0.1);
+    }
+    100%{
+        background:default;
+    }
+}
+
+@keyframes expressIncorrect {
+    0% {
+        background:default;
+    }
+
+    25% {
+        background: rgba(255, 0, 0, 0.15);
+    }
+    100%{
+        background:default;
+    }
+}
+
+.question-render-box{
+    transition: transform 0.3s ease ;
+    
+    animation-name: fadeSlideDownIn, expandIn;
+    animation-timing-function: ease ;
+    animation-duration: 1s;
+}
+.question-render-box:hover{
+    transform: scale(1.01,1.01)
+}
+
+.fade-in-text { 
+    animation-name: fadeSlideDownIn;
+    animation-timing-function: ease ;
+    animation-duration: 0.70s;
+}
+
+.fade-in{
+    animation-name: fadeIn;
+    animation-timing-function: ease ;
+    animation-duration: 0.75s;
+}
+
+.question-render-box.answer-correct{
+    animation-name: expressCorrect, pullDown ;
+
+    animation-duration: 0.4s, 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out, ease-in;
+}
+
+.question-render-box.answer-incorrect{
+    animation-name: expressIncorrect, wiggle ;
+    animation-duration: 0.4s, 0.4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+#main-menu {
+    min-height : 75px;
+    transition: height 0.5s ease-out;
+}

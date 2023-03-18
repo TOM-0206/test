@@ -1,0 +1,20 @@
+{
+    "header":{
+        "type":"question",
+        "display_type":"latex",
+        "marks":5,
+        "tags":["example","matrices","eigen-values","identity-matrix"]
+    },
+    "body":{
+        "latex":"\\text{What is the magnitude of } \\vec{v} \\text{ after being multiplied by } M \\text{ where } \\\\ M = \\begin{bmatrix} \\cos(\\beta) & 0 & \\sin(\\beta)\\\\ 0 & 1 & 0\\\\ -\\sin(\\beta) & 0 & \\cos(\\beta) \\end{bmatrix} , \\vec{v} = \\begin{bmatrix} 1\\\\2\\\\1 \\end{bmatrix} , \\text{ and } \\beta = \\frac{4\\pi}{2}",
+        "answer_prompt":"Find x to 3 s.f. ",
+        "answer":"2.449489742783178"
+    },
+    "user_interaction":{
+        "previous_answers":{
+            "2012-04-23T18:25:43.511Z":false,
+            "2012-04-23T18:26:23.134Z":true,
+            "2012-04-24T16:54:02.043Z":true
+        }
+    }
+}
